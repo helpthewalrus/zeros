@@ -1,14 +1,9 @@
 module.exports = function getZerosCount(number) {
-  let counter1 = 0;
-    
-  for (let i = number; i >= 1; i--) {
-    if (i % 5 === 0) {
-      let t = i;
-      while (t % 5 === 0) {
-        counter1++;
-        t = t / 5;
-      }
-    }
+  let counter = 0,
+      n = 1;
+  while (Math.floor(number / 5**n >= 1)) {
+    counter += Math.floor(number / 5**n);
+    n++;
   }  
-return counter1;
+  return counter;
 }
